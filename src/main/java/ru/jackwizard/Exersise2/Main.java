@@ -1,12 +1,21 @@
 package ru.jackwizard.Exersise2;
 
-
 import ru.jackwizard.Exersise2.MyExceptions.MyArrayDataException;
 import ru.jackwizard.Exersise2.MyExceptions.MyArraySizeException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
+
+/** Задание 2. Исключения
+ 1. Напишите метод, на вход которого подаётся двумерный строковый массив размером 4х4, при подаче массива другого
+ размера необходимо бросить исключение MyArraySizeException.
+ 2. Далее метод должен пройтись по всем элементам массива, преобразовать в int, и просуммировать. Если в каком-то
+ элементе массива преобразование не удалось (например, в ячейке лежит символ или текст вместо числа), должно быть
+ брошено исключение MyArrayDataException, с детализацией в какой именно ячейке лежат неверные данные.
+ 3. В методе main() вызвать полученный метод, обработать возможные исключения MySizeArrayException и
+ MyArrayDataException, и вывести результат расчета.
+*/
 
 public class Main {
 
@@ -25,7 +34,7 @@ public class Main {
     private static String[][] createArray() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String generateArrError = "Введите \"1\" для создания и заполнения массива вручную. \n" +
-                "Введите \"0\" чтобы сгенерировать тестовый массив размерностью int[1...6][1...6] наполненный случайными числами от 0 до 100. ";
+                "Введите \"0\" чтобы сгенерировать тестовый массив размерностью int[4...5][3...4] наполненный случайными числами от 0 до 100. ";
         System.out.println(generateArrError);
         int k = 0,l = 0; // размерности массива
         String[][] array = null;
@@ -39,7 +48,7 @@ public class Main {
                         while (array == null) {
                             try {
                                 System.out.println("Введите размерность массива (два числа через пробел)");
-                                System.out.println("Для корректной работы размеры массива не должны превышать 4х4");
+                                System.out.println("Для корректной работы массив должен иметь размерность 4х4");
                                 String[] size = reader.readLine().split(" ");
                                 k = Integer.parseInt(size[0]);
                                 if (k < 1) throw new NumberFormatException();
@@ -55,15 +64,15 @@ public class Main {
 
                         for (int i = 0; i < k; i++) {
                             for (int j = 0; j < l; j++) {
-                                System.out.printf("Элемент %s,%s ", i, j);
+                                System.out.printf("Элемент %d,%d ", i, j);
                                 array[i][j] = (reader.readLine());
                             }
                         }
                         break;
                     case (0):
                         Random random = new Random();
-                        k = random.nextInt(5) + 1;
-                        l = random.nextInt(5) + 1;
+                        k = random.nextInt(2) + 3;
+                        l = random.nextInt(2) + 3;
                         array = new String[k][l];
                         for (int i = 0; i < array.length; i++) {
                             for (int j = 0; j < array[i].length; j++) {
@@ -103,7 +112,7 @@ public class Main {
         if (stringArray.length != 4) throw new MyArraySizeException();  //исключение если столбец больше 4
 
         for (int i = 0; i < stringArray.length; i++) {
-                if (stringArray[i].length != 4) throw new MyArraySizeException();  //исключение если стока больше 4
+                if (i == 1 && stringArray[i].length != 4) throw new MyArraySizeException();  //исключение если стока больше 4
                 for (int j = 0; j < stringArray[i].length; j++) {
 
                     try {
