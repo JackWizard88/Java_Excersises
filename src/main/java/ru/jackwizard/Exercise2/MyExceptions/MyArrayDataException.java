@@ -1,4 +1,4 @@
-package ru.jackwizard.Exersise2.MyExceptions;
+package ru.jackwizard.Exercise2.MyExceptions;
 
 public class MyArrayDataException extends RuntimeException {
     private int indexI;

@@ -1,7 +1,7 @@
-package ru.jackwizard.Exersise1.Entities;
+package ru.jackwizard.Exercise1.Entities;
 
-import ru.jackwizard.Exersise1.Interfaces.Obstacle;
-import ru.jackwizard.Exersise1.Interfaces.Overcomeable;
+import ru.jackwizard.Exercise1.Interfaces.Obstacle;
+import ru.jackwizard.Exercise1.Interfaces.Overcomeable;
 
 public class Cat implements Overcomeable {
     private final String name;

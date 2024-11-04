@@ -1,4 +1,4 @@
-package ru.jackwizard.Exersise1.Interfaces;
+package ru.jackwizard.Exercise1.Interfaces;
 
 
 public interface Overcomeable {
