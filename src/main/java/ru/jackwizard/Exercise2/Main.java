@@ -1,7 +1,7 @@
-package ru.jackwizard.Exersise2;
+package ru.jackwizard.Exercise2;
 
-import ru.jackwizard.Exersise2.MyExceptions.MyArrayDataException;
-import ru.jackwizard.Exersise2.MyExceptions.MyArraySizeException;
+import ru.jackwizard.Exercise2.MyExceptions.MyArrayDataException;
+import ru.jackwizard.Exercise2.MyExceptions.MyArraySizeException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

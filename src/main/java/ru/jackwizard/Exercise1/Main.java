@@ -1,11 +1,11 @@
-package ru.jackwizard.Exersise1;
+package ru.jackwizard.Exercise1;
 
 import java.util.ArrayList;
 
 
-import ru.jackwizard.Exersise1.Entities.*;
-import ru.jackwizard.Exersise1.Interfaces.Obstacle;
-import ru.jackwizard.Exersise1.Interfaces.Overcomeable;
+import ru.jackwizard.Exercise1.Entities.*;
+import ru.jackwizard.Exercise1.Interfaces.Obstacle;
+import ru.jackwizard.Exercise1.Interfaces.Overcomeable;
 
 public class Main {
     public static void main(String[] args) {
